@@ -22,7 +22,6 @@ public class MiddlewareService {
 
     //Viene desde la base de datos Legacy
     public void syncFromLegacy(UserDetail ud) {
-            repo.save(ud);
             client.syncToMsA(ud);
     }
 
