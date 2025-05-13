@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 public class MsAClient {
     private final RestTemplate rest = new RestTemplate();
 
-    synchronized public void syncToMsA(UserDetailDTO userDetailDto) {
-        rest.postForEntity("http://localhost:8080/users-details/sync-from-legacy", userDetailDto, Void.class);
+    public void syncToMsA(UserDetailDTO userDetailDTO) {
+        rest.postForEntity("http://localhost:8080/users-details/sync-from-legacy", userDetailDTO, Void.class);
     }
 }

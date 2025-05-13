@@ -19,6 +19,7 @@ public class UserDetailMapper {
         dto.setLastName(userDetail.getLastName());
         dto.setGender(userDetail.getGender());
         dto.setStatus(userDetail.getStatus());
+        dto.setPassword(userDetail.getPassword());
         return dto;
     }
 
@@ -34,6 +35,7 @@ public class UserDetailMapper {
         entity.setLastName(userDetailDTO.getLastName());
         entity.setGender(userDetailDTO.getGender());
         entity.setStatus(userDetailDTO.getStatus());
+        entity.setPassword(userDetailDTO.getPassword());
         return entity;
     }
 }

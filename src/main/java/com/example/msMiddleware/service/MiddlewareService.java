@@ -23,6 +23,10 @@ public class MiddlewareService {
     //Viene del microservicio A
     public void syncFromMsA(UserDetailDTO ud) {
             repo.save(mapper.toEntity(ud));
+
+            //A borrar
+            ud.setFirstName("RETORNO");
+            syncFromLegacy(mapper.toEntity(ud));
     }
 
     //Viene desde la base de datos Legacy
