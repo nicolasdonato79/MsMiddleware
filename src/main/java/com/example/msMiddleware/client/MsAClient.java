@@ -11,6 +11,6 @@ public class MsAClient {
     private final RestTemplate rest = new RestTemplate();
 
     public void syncToMsA(UserDetailDTO userDetailDTO) {
-        rest.postForEntity("http://localhost:8080/users-details/sync-from-legacy", userDetailDTO, Void.class);
+        rest.postForEntity("http://localhost:8080/msa/users-details/sync-from-legacy", userDetailDTO, Void.class);
     }
 }
