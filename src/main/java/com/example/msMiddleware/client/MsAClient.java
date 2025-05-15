@@ -18,9 +18,7 @@ import org.springframework.web.client.RestTemplate;
 //    }
 //}
 
-@FeignClient(name = "ms-a-client", url = "http://localhost:8080/msa/users-details")
-public interface MsAClient {
-
-    @PostMapping("/sync-from-legacy")
-    void syncToMsA(@RequestBody UserDetailDTO userDetailDTO);
+    public void syncToMsA(UserDetailDTO userDetailDTO) {
+        rest.postForEntity("http://localhost:8080/users-details/sync-from-legacy", userDetailDTO, Void.class);
+    }
 }
