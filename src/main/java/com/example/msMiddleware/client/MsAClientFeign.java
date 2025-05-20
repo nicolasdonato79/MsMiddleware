@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 // Cliente Feign hacia MS A
-@FeignClient(name = "ms-a", url = "http://localhost:8080/msa/users-details")
+@FeignClient(name = "msa")
 public interface MsAClientFeign {
 
-    @PostMapping("/sync-from-legacy")
+    @PostMapping("/msa/users-details/sync-from-legacy")
     void syncToMsA(@RequestBody UserDetailDTO userDetailDTO);
 }

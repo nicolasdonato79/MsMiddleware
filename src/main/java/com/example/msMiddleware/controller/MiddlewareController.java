@@ -5,10 +5,7 @@ import com.example.msMiddleware.entity.UserDetail;
 import com.example.msMiddleware.service.MiddlewareService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/msmiddleware/users-details")
@@ -28,4 +25,17 @@ public class MiddlewareController {
         service.syncFromLegacy(userDetail);
         return ResponseEntity.ok().build();
     }
+
+    @PutMapping("/sync-from-legacy")
+    public ResponseEntity<Void> syncFromLegacyUpdate(@RequestBody UserDetail userDetail) {
+        service.syncFromLegacy(userDetail);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/sync-from-legacy")
+    public ResponseEntity<Void> syncFromLegacyDelete(@RequestBody UserDetail userDetail) {
+        service.syncFromLegacy(userDetail);
+        return ResponseEntity.ok().build();
+    }
+
 }

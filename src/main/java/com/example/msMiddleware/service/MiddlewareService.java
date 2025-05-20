@@ -1,6 +1,6 @@
 package com.example.msMiddleware.service;
 
-import com.example.msMiddleware.client.MsAClient;
+import com.example.msMiddleware.client.MsAClientFeign;
 import com.example.msMiddleware.dto.UserDetailDTO;
 import com.example.msMiddleware.entity.UserDetail;
 import com.example.msMiddleware.mapper.UserDetailMapper;
@@ -15,14 +15,14 @@ public class MiddlewareService {
     private UserDetailRepository repo;
 
     @Autowired
-    private MsAClient client;
+    private MsAClientFeign client;
 
     @Autowired
     private UserDetailMapper mapper;
 
     //Viene del microservicio A
     public void syncFromMsA(UserDetailDTO ud) {
-            repo.save(mapper.toEntity(ud));
+            //repo.save(mapper.toEntity(ud));
 
             //A borrar
             ud.setFirstName("RETORNO");
