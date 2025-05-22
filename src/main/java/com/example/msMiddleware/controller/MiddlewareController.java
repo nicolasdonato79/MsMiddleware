@@ -15,26 +15,39 @@ public class MiddlewareController {
     private MiddlewareService service;
 
     @PostMapping("/sync-to-legacy")
-    public ResponseEntity<Void> syncToLegacy(@RequestBody UserDetailDTO userDetailDto) {
-        service.syncFromMsA(userDetailDto);
+    public ResponseEntity<Void> syncToLegacyCreate(@RequestBody UserDetailDTO userDetailDto) {
+        service.syncFromMsACreate(userDetailDto);
         return ResponseEntity.ok().build();
     }
 
+    @PutMapping("/sync-to-legacy")
+    public ResponseEntity<Void> syncToLegacyUpdate(@RequestBody UserDetailDTO userDetailDto) {
+        service.syncFromMsAUpdate(userDetailDto);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/sync-to-legacy")
+    public ResponseEntity<Void> syncToLegacyDelete(@RequestBody UserDetailDTO userDetailDto) {
+        service.syncFromMsADelete(userDetailDto);
+        return ResponseEntity.ok().build();
+    }
+
+
     @PostMapping("/sync-from-legacy")
-    public ResponseEntity<Void> syncFromLegacy(@RequestBody UserDetail userDetail) {
-        service.syncFromLegacy(userDetail);
+    public ResponseEntity<Void> syncFromLegacyCreate(@RequestBody UserDetail userDetail) {
+        service.syncFromLegacyCreate(userDetail);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/sync-from-legacy")
     public ResponseEntity<Void> syncFromLegacyUpdate(@RequestBody UserDetail userDetail) {
-        service.syncFromLegacy(userDetail);
+        service.syncFromLegacyUpdate(userDetail);
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/sync-from-legacy")
     public ResponseEntity<Void> syncFromLegacyDelete(@RequestBody UserDetail userDetail) {
-        service.syncFromLegacy(userDetail);
+        service.syncFromLegacyDelete(userDetail);
         return ResponseEntity.ok().build();
     }
 
