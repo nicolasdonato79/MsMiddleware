@@ -38,4 +38,18 @@ public class UserDetailMapper {
         entity.setPassword(userDetailDTO.getPassword());
         return entity;
     }
+
+    public void updateEntityFromDTO(UserDetailDTO userDetailDTO, UserDetail userDetail) {
+        if (userDetailDTO == null || userDetail == null) {
+            return;
+        }
+
+        //userDetail.setUserId(userDetailDTO.getUserId());
+        userDetail.setUsername(userDetailDTO.getUsername());
+        userDetail.setFirstName(userDetailDTO.getFirstName());
+        userDetail.setLastName(userDetailDTO.getLastName());
+        userDetail.setGender(userDetailDTO.getGender());
+        userDetail.setStatus(userDetailDTO.getStatus());
+        userDetail.setPassword(userDetailDTO.getPassword());
+    }
 }
