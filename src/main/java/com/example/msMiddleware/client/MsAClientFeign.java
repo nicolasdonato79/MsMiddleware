@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 // Cliente Feign hacia MS A
-@FeignClient(name = "msa")
+@FeignClient(name = "MSA")
 public interface MsAClientFeign {
 
     @PostMapping("/msa/users-details/sync-from-legacy")
