@@ -23,7 +23,9 @@ public class MiddlewareService {
     //Viene del microservicio A
     public void syncFromMsACreate(UserDetailDTO udd) {
             //Originalmente va esto
-            repo.save(mapper.toEntity(udd));
+            UserDetail ud=  mapper.toEntity(udd);
+            ud.setUserId(null);
+            repo.save(ud);
     }
 
     //Viene del microservicio A
