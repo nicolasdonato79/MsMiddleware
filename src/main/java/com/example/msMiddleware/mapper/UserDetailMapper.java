@@ -51,5 +51,6 @@ public class UserDetailMapper {
         userDetail.setGender(userDetailDTO.getGender());
         userDetail.setStatus(userDetailDTO.getStatus());
         userDetail.setPassword(userDetailDTO.getPassword());
+        userDetail.setOrigin(userDetailDTO.getOrigin());
     }
 }

@@ -30,4 +30,9 @@ public class UserDetail {
 
     @Column(name = "STATUS", precision = 3, scale = 0)
     private Integer status;
+
+    @Column(name = "ORIGIN", length = 255)
+    private String origin;
+
+
 }

@@ -11,4 +11,5 @@ public class UserDetailDTO {
     private String gender;
     private Integer status;
     private String password;
+    private String origin;
 }
