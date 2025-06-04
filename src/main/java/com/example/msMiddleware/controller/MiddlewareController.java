@@ -14,20 +14,26 @@ public class MiddlewareController {
     @Autowired
     private MiddlewareService service;
 
+    private static final String origin = "MSA";
+
     @PostMapping("/sync-to-legacy")
     public ResponseEntity<Void> syncToLegacyCreate(@RequestBody UserDetailDTO userDetailDto) {
+        userDetailDto.setOrigin(origin);
         service.syncFromMsACreate(userDetailDto);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/sync-to-legacy")
     public ResponseEntity<Void> syncToLegacyUpdate(@RequestBody UserDetailDTO userDetailDto) {
+        userDetailDto.setOrigin(origin);
         service.syncFromMsAUpdate(userDetailDto);
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/sync-to-legacy")
     public ResponseEntity<Void> syncToLegacyDelete(@RequestBody UserDetailDTO userDetailDto) {
+        //Esto puede dar error?!?!?
+        userDetailDto.setOrigin(origin);
         service.syncFromMsADelete(userDetailDto);
         return ResponseEntity.ok().build();
     }
